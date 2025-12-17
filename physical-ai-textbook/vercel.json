@@ -2,15 +2,15 @@
     "version": 2,
     "buildCommand": "npm run build",
     "framework": "docusaurus",
-    "env": [
-        "QDRANT_URL",
-        "QDRANT_API_KEY",
-        "COHERE_API_KEY",
-        "GOOGLE_API_KEY",
-        "MODEL_NAME",
-        "COLLECTION_NAME",
-        "LOG_LEVEL"
-    ],
+    "env": {
+        "QDRANT_URL": {},
+        "QDRANT_API_KEY": {},
+        "COHERE_API_KEY": {},
+        "GOOGLE_API_KEY": {},
+        "MODEL_NAME": {},
+        "COLLECTION_NAME": {},
+        "LOG_LEVEL": {}
+    },
     "functions": {
         "api/chat/handler.py": {
             "runtime": "python3.9"
