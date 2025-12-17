@@ -1,0 +1,37 @@
+{
+    "version": 2,
+    "buildCommand": "npm run build",
+    "framework": "docusaurus",
+    "env": [
+        "QDRANT_URL",
+        "QDRANT_API_KEY",
+        "COHERE_API_KEY",
+        "GOOGLE_API_KEY",
+        "MODEL_NAME",
+        "COLLECTION_NAME",
+        "LOG_LEVEL"
+    ],
+    "functions": {
+        "api/chat/handler.py": {
+            "runtime": "python3.9"
+        },
+        "api/health/handler.py": {
+            "runtime": "python3.9"
+        }
+    },
+    "routes": [
+        {
+            "src": "/api/health",
+            "dest": "api/health/handler.py"
+        },
+        {
+            "src": "/api/chat",
+            "dest": "api/chat/handler.py"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/index.html",
+            "status": 200
+        }
+    ]
+}
